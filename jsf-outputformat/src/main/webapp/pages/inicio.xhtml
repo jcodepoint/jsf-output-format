@@ -1,0 +1,43 @@
+<ui:composition template="../templates/master.xhtml"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	<ui:define name="content">
+		<div style="border-bottom: 1px solid #CCC;padding:10px">
+			<h:panelGrid columns="1" columnClasses="col-1" style="width:100%;">
+				<h:outputText value="JSF OutputFormat Example" />
+			</h:panelGrid>
+		</div>
+		<div id="container">
+			<h:form id="form1">
+				<h:panelGrid columns="1" style="width:600px;margin-left:calc(50% - 300px);margin-bottom:25px;">
+					<h:outputFormat value="-> Param0: {0} - Param1: {1}">
+						<f:param value="valor1" />
+						<f:param value="valor2" />
+					</h:outputFormat>
+
+					<br />
+
+					<h:outputFormat value="-> Param0: {0} - Param1: {1}" styleClass="of-title">
+						<f:param value="valor1" />
+						<f:param value="valor2" />
+					</h:outputFormat>
+
+					<br />
+					
+					<h:outputFormat value="&lt;a href=&quot;http://localhost:8080/jsf-outputformat/pages/result-param.xhtml?nombre={0}&quot;&gt;Link con parametro&lt;/a&gt;" escape="true">
+						<f:param value="jcodepoint" />
+					</h:outputFormat>
+
+					<br />
+					
+					<h:outputFormat value="&lt;a href=&quot;http://localhost:8080/jsf-outputformat/pages/result-param.xhtml?nombre={0}&quot;&gt;Link con parametro&lt;/a&gt;" escape="false">
+						<f:param value="jcodepoint" />
+					</h:outputFormat>
+				</h:panelGrid>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
